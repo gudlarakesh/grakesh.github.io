@@ -1,0 +1,65 @@
+
+#main .container h1{
+    	  text-align: center;
+    	  color: black;
+    	  position: relative;
+         margin-top: 250px;
+         color: black;
+         text-decoration: none;
+         font-weight: bold;
+         font: 3.5em 'Merienda One', Helvetica, sans-serif;
+  }
+   .land h3 {  	
+  	
+  	text-align: center;
+    margin-bottom: 250px;
+
+   }    
+  
+.land h3 button{
+	background-color: transparent;
+	color: black;
+	bottom: 50px;
+   display: inline-block;
+}
+
+    #profile h1{
+  	top: 20px;
+  	font: 'Pacifico', Helvetica, sans-serif;
+  	text-align: center;
+    font-size: 50px;
+     text-decoration: underline;
+
+}
+
+.container-fluid h1{
+  text-align: center;
+  text-decoration: underline;
+  font-family: tahoma;
+  
+}
+#profile.col-md-3 p{
+	font: 1.5em ;
+  font-family: tahoma;
+}
+.portfolio h1{
+  margin-top: 50px;
+  text-align: center;
+  color: black;
+  text-decoration: underline;
+}
+#landing-page{
+  background-image: url('../images/profile/no.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#profile{
+  background-image: url('../images/profile/pin.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#profile h1{
+  color: blue;
+  top: 20px;
+}
