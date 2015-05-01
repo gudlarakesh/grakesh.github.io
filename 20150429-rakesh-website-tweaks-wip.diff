@@ -1,0 +1,167 @@
+diff --git a/_includes/header.html b/_includes/header.html
+index 0aa2fe8..1311c54 100644
+--- a/_includes/header.html
++++ b/_includes/header.html
+@@ -1,4 +1,4 @@
+-<header>
++<header class="container">
+ <div id="land" class="container=fluid"> 
+   <a href="/" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span></a>
+   <div class="dropdown">
+diff --git a/_layouts/post.html b/_layouts/post.html
+index a2b4e52..10dd467 100644
+--- a/_layouts/post.html
++++ b/_layouts/post.html
+@@ -1,11 +1,11 @@
+ ---
+ layout: default
+ ---
+-<div class="post">
++<div class="post container">
+ 
+   <header class="post-header">
+-    <h1 class="post-title">{{ page.title }}</h1>
+-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
++    <h1 class="post-title wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="0.1s">{{ page.title }}</h1>
++    <p class="post-meta wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="0.2s">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+   </header>
+ 
+   <article class="post-content">
+diff --git a/_posts/2015-04-29-started-rails.html b/_posts/2015-04-29-started-rails.html
+new file mode 100644
+index 0000000..36e2ec5
+--- /dev/null
++++ b/_posts/2015-04-29-started-rails.html
+@@ -0,0 +1,10 @@
++---
++layout: post
++title:  "I started working on Rails and its exciting!"
++date:   2015-04-29 11:06:15
++categories: jekyll update
++---
++
++<p class="wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.1s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sequi a, veniam! Repellendus atque animi, sunt quia rem dolorem, totam assumenda ipsam, odio officiis enim quae repellat voluptas amet architecto.</p>
++
++<p class="wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam modi nostrum eius accusamus suscipit eaque corporis reiciendis minus recusandae consequuntur fuga mollitia, soluta reprehenderit officia repellendus nulla debitis delectus eos a unde cumque culpa ipsum. Culpa dignissimos possimus saepe, praesentium distinctio at earum sapiente ipsa consequuntur repellat. Ipsa, consequuntur eum.</p>
+\ No newline at end of file
+diff --git a/_sass/_land.scss b/_sass/_land.scss
+index f3a3ac4..e544ab0 100644
+--- a/_sass/_land.scss
++++ b/_sass/_land.scss
+@@ -62,4 +62,12 @@
+ #profile h1{
+   color: blue;
+   top: 20px;
++}
++
++.portfolio {
++  .project {
++    height: 140px;
++    background-color: green;
++    margin: 10px;
++  }
+ }
+\ No newline at end of file
+diff --git a/blog.html b/blog.html
+index daf94d3..48367ac 100644
+--- a/blog.html
++++ b/blog.html
+@@ -15,6 +15,11 @@ permalink: /blog/
+         <h2>
+           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+         </h2>
++        <p>
++          {{post.excerpt}}
++        </p>
++
++        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Read More &raquo;</a>
+       </li>
+     {% endfor %}
+   </ul>
+diff --git a/contact.html b/contact.html
+index a923211..19f8113 100644
+--- a/contact.html
++++ b/contact.html
+@@ -4,13 +4,18 @@ title: sprk contact
+ permalink: /contact/
+ ---
+   <div class="find"></div>
+- <div class="container-fluid"><h1 class="wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.1s" font_family="Merienda One">CONTACT ME</h1></div>
++ <div class="container">
++ 	<h1 class="wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.1s" font_family="Merienda One">CONTACT ME</h1>
++
+ 
+  <div class="data"><h2>Address</h2></div>
+- <div class="col-md-4"><p> Contact no-09494866159
+- 	   E-mail:gudlarakesh1991@gmail.com</p></div>
++ <div class="col-md-4">
++ 	<p> Contact no-09494866159
++ 	   E-mail:gudlarakesh1991@gmail.com
++ 	 </p>
++ 	</div>
+ 
+- 	<div class="contact">
++ 	<div class="contact col-md-8">
+  		
+  		<a target="_blank" title="follow me on twitter" href="http://www.twitter.com/rakesh242"><img alt="follow me on twitter" src="//login.create.net/images/icons/user/twitter_40x40.png" border=0></a>
+  		<a target="_blank" title="find us on Facebook" href="http://www.facebook.com/gudlarakesh"><img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_40x40.png" border=0></a>
+@@ -33,5 +38,6 @@ permalink: /contact/
+ 	</div>
+ 	<input id="submit_button" type="submit" value="Send email" />
+ </form>						
++</div>
+ 
+  		
+\ No newline at end of file
+diff --git a/portfolio.html b/portfolio.html
+index 3e47e52..7128716 100644
+--- a/portfolio.html
++++ b/portfolio.html
+@@ -3,7 +3,28 @@ layout: default
+ title: sprk portfolio
+ permalink: /portfolio/
+ ---
+-   <body>
+-
+- <div class="portfolio"><h1 class="wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="0.1s">PORTFOLIO</h1></div>
+-</body>
+\ No newline at end of file
++<div class="portfolio">
++  <h1 class="wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="0.1s">PORTFOLIO</h1>
++  <div class="container">
++    <div class="row">
++      <div class="col-md-4">
++        <div class="project wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0s"></div>
++      </div>
++      <div class="col-md-4">
++        <div class="project wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.2s"></div>
++      </div>
++      <div class="col-md-4">
++        <div class="project wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.4s"></div>
++      </div>
++      <div class="col-md-4">
++        <div class="project wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.6s"></div>
++      </div>
++      <div class="col-md-4">
++        <div class="project wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.8s"></div>
++      </div>
++      <div class="col-md-4">
++        <div class="project wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="1s"></div>
++      </div>
++    </div>
++  </div>
++</div>
+\ No newline at end of file
+diff --git a/skills.html b/skills.html
+index 8d7050f..d998e00 100644
+--- a/skills.html
++++ b/skills.html
+@@ -8,7 +8,7 @@ permalink: /skills/
+  <div class="container-fluid"><h1 
+ >SKILLS</h1></div>
+ <h2>My skills are</h2>
+-<div class="col-md-4"><img src="http://www.softwaysolutions.com/images/html5-development-banner.jpg" alt="html5" width="250" height="200">
++<div class="col-md-4"><img class="img-responsive" src="http://www.softwaysolutions.com/images/html5-development-banner.jpg" alt="html5" width="250" height="200">
+ <div class="progress">
+     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="50" style="width:90%">
+       90%
