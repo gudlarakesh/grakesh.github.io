@@ -9,3 +9,105 @@ background: #FA987D;
 
 
 background: #F06060;
+
+
+.navigation {
+
+ margin-top: 0px;
+ margin-left: 0px;
+ box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.navigation li {
+  width: 178px; border-left: 5px solid #666;
+  float: left;
+  cursor: pointer;
+  list-style-type: none;
+  
+  padding: 10px 50px 10px 15px;
+  
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+
+.navigation li h2 {
+  font-family: georgia;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 15px;
+}
+
+.navigation li p{
+  font-size: 11px;
+  color: #999;
+  
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+}
+
+.navigation li:hover {
+  background: #333;
+  border-left: 5px solid #000;
+}
+
+.navigation li:hover h2 {
+  font-weight: bold;
+  color: #fff;
+}
+
+.navigation li:hover p {
+  color: #ccc;
+  padding-left: 5px;
+}
+
+.navigation a li h2{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+ <div class="container">
+    <ul class="navigation">
+      <a href="/">
+        <li>
+          <h2>Home</h2>
+          <p>Beginning</p>
+        </li>
+      </a>
+      <a href="/profile/">
+        <li>
+          <h2>Profile</h2>
+          <p>Some stuff about me</p>
+        </li>
+      </a>
+      <a href="/portfolio/">
+        <li>
+          <h2>Portfolio</h2>
+          <p>See my best effort</p>
+        </li>
+      </a>
+      <a href="/skills/">
+        <li>
+          <h2>Skills</h2>
+          <p>Expert on</p>
+        </li>
+      </a>
+      <a href="/blog/" alt="blog rakesh">
+        <li>
+          <h2>Blog</h2>
+          <p>My updates</p>
+        </li>
+      </a>
+      <a href="/contact/">
+        <li>
+          <h2>Contact</h2>
+          <p>Catch me on</p>
+        </li>
+      </a>
+    </ul>    
+  </div>
